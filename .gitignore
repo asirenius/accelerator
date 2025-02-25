@@ -1,0 +1,45 @@
+# VS Code
+.vscode/
+
+# Build
+build/
+
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.xpr
+*.cache/
+*.runs/
+*.sim/
+*.hw/
+*.ip_user_files/
+
+# SDK generated files
+*.sdk/
+*.runs/
+*.debug/
+*.release/
+*.elf
+*.o
+
+# Keep TCL scripts
+!*.tcl
+
+# Keep XDC files
+!*.xdc
+
+# Keep source files
+!*.vhd
+!*.v
+!*.sv
+!*.c
+!*.h
+!*.cpp
+!*.hpp
+
+# Python
+*venv/
+__pycache__/
+*.py[cod]
+*$py.class
