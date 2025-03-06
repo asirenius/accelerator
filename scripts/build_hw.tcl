@@ -21,7 +21,7 @@ set OPT_MEM_ADDR_BITS [expr {ceil(log($NUM_REGISTERS)/log(2))}]
 set ADDR_WIDTH [expr {$ADDR_LSB + $OPT_MEM_ADDR_BITS}]
 
 # Board Repository
-set_param board.repoPaths [list "/home/asirenius/.Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store"]
+set_param board.repoPaths [list "$::env(HOME)/.Xilinx/Vivado/2024.2/xhub/board_store/xilinx_board_store"]
 
 # Project name
 set PROJECT "hw_M${INPUT_SIZE}_K${KERNEL_SIZE}_S${STRIDE}_P${POOL_SIZE}_Q${DATA_WIDTH}-${FRACTIONAL_BITS}"
@@ -134,8 +134,8 @@ validate_bd_design
 save_bd_design
 
 # Make Hardware Wrapper
-make_wrapper -files [get_files /home/asirenius/Developer/VivadoScript/hw/hw.srcs/sources_1/bd/design_1/design_1.bd] -top
-add_files -norecurse /home/asirenius/Developer/VivadoScript/hw/hw.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+make_wrapper -files [get_files $TEMP_DIR/${PROJECT}.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse $TEMP_DIR/${PROJECT}.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
 
 # Update compile order
 update_compile_order -fileset sources_1
