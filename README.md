@@ -36,7 +36,7 @@ The system achieves significant performance improvements over software-only exec
 
 The design follows a clean separation between processing system (PS) and programmable logic (PL):
 
-![System Architecture](design/architecture.png)
+![System Architecture](design/soc.png)
 
 
 ### Accelerator Design
